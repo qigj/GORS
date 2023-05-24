@@ -10,6 +10,7 @@ go build -o GORS main.go
 - `-f`是必须添加的
 - `-p`和`-k`二选一，同时添加使用密码
 
+#### Linux
 ```
 root@c18e40ed9187:/data/test-go/GORS# ./GORS -h
 Usage of ./GORS:
@@ -23,4 +24,28 @@ Usage of ./GORS:
         远程服务器的IP地址或主机名加端口. (default "127.0.0.1:22")
   -u string
         远程服务器的用户名. (default "root")
+```
+
+```
+GORS -k /root/.ssh/id_rsa password -s 192.168.1.1:22 -f test.sh
+```
+
+#### windows
+
+```
+C:\Users\zetyun\Downloads>GORS.exe -h
+Usage of GORS.exe:
+  -f string
+        * 本地脚本文件的路径.
+  -k string
+        * SSH私钥文件的路径.
+  -p string
+        * 远程服务器的密码.
+  -s string
+        远程服务器的IP地址或主机名加端口. (default "127.0.0.1:22")
+  -u string
+        远程服务器的用户名. (default "root")
+```
+```
+GORS.exe -p password -s 192.168.1.1:22 -u root -f test.sh
 ```
